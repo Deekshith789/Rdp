@@ -1,0 +1,27 @@
+name: CRD-Continuous-Run
+
+on:
+
+  schedule:
+
+    - cron:  '0 0 * * *' 
+
+jobs:
+
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+
+    - name: Running CRD
+
+      run: |
+
+        while ($true) {
+
+            & "C:\path\to\CRD.exe" -authcode=${{ secrets.CRD_AUTHCODE }} -pin=${{ secrets.CRD_PINCODE }}
+
+            Start-Sleep -Seconds 3600
+
+        }
