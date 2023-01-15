@@ -1,5 +1,4 @@
-while ($true){
-    Write-Host $i
-    Sleep 360
-    $i--
+while ($true)
+{
+    Start-Sleep -Seconds 1
 }
